@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="author" content="Guilherme Franco">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+</head>
+<body>
+<header class="jumbotron text-center">
+    <h1>Titulo do website</h1>
+    <p>Titulo do website</p>
+    <nav>
+        <a href="{% url 'website:home' %}" class="btn btn-info">Home</a>
+        <a href="{% url 'website:contact' %}" class="btn btn-info">Contact</a>
+        <a href="{% url 'website:info' %}" class="btn btn-info">Info</a>
+    </nav>
+</header>
+<article class="container">
+    <main class="col-sm-6">
+        {% block main %}
+        {% endblock main %}
+    </main>
+    <aside class="col-sm-6">
+        <img src="{% static 'images/shrek.png' %}" alt="shrek" width="200" height="200">
+    </aside>
+</article>
+<footer>
+    <p>Titulo do website</p>
+</footer>
+</body>
